@@ -60,8 +60,6 @@ const closeModal = () => {
   /* Creat an HTML */
   
   const head = document.querySelector('.header');
-  const bigTitle = document.querySelector('h1');
-  const subTitle = document.querySelector('h2');
   const list = document.querySelector('.order-list');
   const order = document.querySelector('.order');
   const nameown = document.querySelector('.title');
@@ -69,23 +67,21 @@ const closeModal = () => {
   const buttonDelete = document.querySelector('.served');
   const body = document.querySelector('body');
  
-  const myHTML = `
-      <div class="order-list">
-      <div class="order" data-dish="romazava" data-size="large" data-amount="2">
-      <span class="title">${nameown.value}
-        </span>
-        <button class="details">${buttonDetail}</button>
-        <button class="served">${buttonDelete}</button>
-        </div>
-    </div>`
+
 
   addList.addEventListener('click', (e) => {
     e.preventDefault();
 
-   
-      
+
+    const myHTML = `
+    <div class="order-list">
+    <div class="order" data-dish="romazava" data-size="large" data-amount="2">
+    <span class="title">${nameown.value}
+      </span>
+      <button class="details">${buttonDetail}</button>
+      <button class="served">${buttonDelete}</button>
+      </div>
+  </div>`
      head.innerHTML += myHTML;
-     
+    
   });
-   
-  
