@@ -1,9 +1,12 @@
 console.log('good luck!');
+/* Grabe some usful element by there class */
 const headerDish = document.querySelector('.header button');
 const addDish = document.querySelector('.add-order');
 const modalInner = document.querySelector('.modal-inner');
 const modalOuter = document.querySelector('.modal-outer');
-const addList = document.querySelector('.submitOrder')
+const addList = document.querySelector('.submitOrder');
+
+/* HTML of modal */
 
 function handleHeaderDishButtonClick(e){
     modalInner.innerHTML = `<form>
@@ -50,14 +53,12 @@ function handleHeaderDishButtonClick(e){
     modalOuter.classList.add('open');
 };
 
-
-const closeModal = () => {
-    modalOuter.classList.remove('open');
-};
+/* Listen to the event */
   addDish.addEventListener('click', handleHeaderDishButtonClick);
 
   /* Adding dish */
-  /* Creat an HTML */
+
+  /* Grabe some element */
   
   const head = document.querySelector('.header');
   const list = document.querySelector('.order-list');
@@ -69,19 +70,29 @@ const closeModal = () => {
  
 
 
-  addList.addEventListener('click', (e) => {
+  window.addEventListener('click', (e) => {
     e.preventDefault();
 
-
-    const myHTML = `
-    <div class="order-list">
+    /* Creating an HTML */
+const myHTML =`<div class="header"></div>
+<div class="container">
+  <h1>Onja Express Food</h1>
+  <h2>Order List</h2>
+  <div class="order-list">
     <div class="order" data-dish="romazava" data-size="large" data-amount="2">
     <span class="title">${nameown.value}
-      </span>
-      <button class="details">${buttonDetail}</button>
-      <button class="served">${buttonDelete}</button>
-      </div>
+    </span>
+      <button class="details">Details</button>
+      <button class="served">Delete order</button>
+    </div>
   </div>`
-     head.innerHTML += myHTML;
+    e.target = myHTML;
     
+    if(e.target.matches("button.submitOrder")){
+      e.target
+    };
+
+    if(e.target.matches("button.detail")){
+    
+    }
   });
