@@ -1,14 +1,12 @@
 console.log('good luck!');
-/* Grabe some usful element by there class */
-const headerDish = document.querySelector('.header button');
-const addDish = document.querySelector('.add-order');
-const modalInner = document.querySelector('.modal-inner');
-const modalOuter = document.querySelector('.modal-outer');
-const addList = document.querySelector('.submitOrder');
-
+/* Grabe some usful element */
+  const headerDish = document.querySelector('.header button');
+  const addDish = document.querySelector('.add-order');
+  const modalInner = document.querySelector('.modal-inner');
+  const modalOuter = document.querySelector('.modal-outer');
+  const addList = document.querySelector('.submitOrder')
 /* HTML of modal */
-
-function handleHeaderDishButtonClick(e){
+  function handleHeaderDishButtonClick(e){
     modalInner.innerHTML = `<form>
     <p class="enter-name">Your name :</p>
     <input
@@ -52,16 +50,14 @@ function handleHeaderDishButtonClick(e){
     
     modalOuter.classList.add('open');
 };
-
-/* Listen to the event */
+  /* This listening the event e */
   addDish.addEventListener('click', handleHeaderDishButtonClick);
 
   /* Adding dish */
 
-  /* Grabe some element */
+  /* Grabe some element which I might use */
   
   const head = document.querySelector('.header');
-  const list = document.querySelector('.order-list');
   const order = document.querySelector('.order');
   const nameown = document.querySelector('.title');
   const buttonDetail = document.querySelector('.details');
@@ -70,29 +66,40 @@ function handleHeaderDishButtonClick(e){
  
 
 
-  window.addEventListener('click', (e) => {
+  window.addEventListener('submit', (e) => {
     e.preventDefault();
+    /* After submited the content will removed */
+
+    modalOuter.classList.remove('open');
+    /* Variable of the div order list */
+
+    const list = document.querySelector('.order-list');
+
+    
 
     /* Creating an HTML */
-const myHTML =`<div class="header"></div>
-<div class="container">
-  <h1>Onja Express Food</h1>
-  <h2>Order List</h2>
-  <div class="order-list">
-    <div class="order" data-dish="romazava" data-size="large" data-amount="2">
-    <span class="title">${nameown.value}
-    </span>
-      <button class="details">Details</button>
-      <button class="served">Delete order</button>
-    </div>
-  </div>`
+  const myHTML =`<div class="header"></div>
+  <div class="container">
+    <div class="order-list">
+      <div class="order" data-dish="romazava" data-size="large" data-amount="2">
+      <span class="title">${nameown.value}
+      </span>
+        <button class="details">Details</button>
+        <button class="served">Delete order</button>
+      </div>
+    </div>`
+  
     e.target = myHTML;
+  /* Insert the html */ 
+    list.insertAdjacentHTML('beforeend', myHTML);
     
-    if(e.target.matches("button.submitOrder")){
-      e.target
-    };
-
-    if(e.target.matches("button.detail")){
-    
+    if(e.target.matches("form")){
+      const form = e.target;
+      form.nameown.value;
+      
     }
+
   });
+
+
+
