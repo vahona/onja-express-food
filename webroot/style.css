@@ -1,0 +1,68 @@
+html {
+    margin: 0;
+    font-size: 20px;
+}
+
+body {
+    padding: 4rem;
+    background-color: rgb(189, 115, 115);
+    color: #ffff;
+}
+
+header {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#add-btn {
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
+    cursor: pointer;
+    background-color: rgb(12, 113, 160);
+    color: #ffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+input {
+    font-size: 20px;
+    color: rgb(46, 4, 40);
+    font-weight: 700;
+}
+
+.lists-of-todo {
+    border: 1px solid;
+    padding-block-start: 1rem;
+    padding-block-end: 1rem;
+}
+
+.todo-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+button.finished {
+    background-color: rgb(172, 47, 194);
+    font-size: 20px;
+    color: #ffff;
+    padding-block-start: 0.5rem;
+    padding-block-end: 0.5rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    cursor: pointer;
+}
+
+div {
+		text-align: center
+}
+
+.input-choice{
+    width: 300px;
+    border: 1px solid yellow;
+    
+}
